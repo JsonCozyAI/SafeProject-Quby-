@@ -1,60 +1,45 @@
-# 🔐 SafeProject – Elektronischer Zahlensafe mit Arduino
+# Arduino-basiertes Zahlenschloss
 
-Ein Arduino-Projekt zur Simulation eines elektronischen Safes, der nur durch Eingabe eines richtigen vierstelligen Codes geöffnet werden kann – basierend auf dem Spiel „Number Baseball“.
+Dieses Projekt ist ein selbstgebauter Arduino-Safe, bei dem verschiedene Rätsel und Sensoren zum Öffnen des Tresors verwendet werden. Die Benutzeroberfläche besteht aus einem LCD-Display, einem 4x4-Tastenfeld und einem Neopixel-LED-Streifen zur visuellen Rückmeldung.
 
-## 🔧 Verwendete Hardware
+## Inhalt
 
-- Arduino Uno oder Funduino
+- Arduino Sketch (.ino)
+- 3D-gedrucktes Modell (STL-Dateien)
+- Bilder & Aufbauhilfe
+- Lichtsensor-Funktion und Morsecode-Logik
+- LED-Farbcode-Feedback (grün = richtig, rot = falsch)
+- LCD-Ausgabe und Servosteuerung
+
+## Verwendete Hardware
+
+- Arduino Uno
 - 4x4 Keypad
-- LCD 16x2 mit I²C-Modul
-- Servomotor (z. B. SG90)
-- Lichtsensor (KY-010)
-- LED + 330Ω Widerstand
-- Breadboard & Jumper-Kabel
-- Optional: 3D-gedrucktes Gehäuse
+- LiquidCrystal I2C LCD
+- Neopixel LED-Streifen (80 LEDs, RGBW, 5V)
+- Servo-Motor (z.B. SG90)
+- Lichtsensor (z.B. KY-010 oder LDR)
+- 3D-gedrucktes Gehäuse
+- Diverse Jumperkabel
 
-## 🎮 Funktionen
+## Rätsel-Modi
 
-- Zufällige Generierung eines vierstelligen Codes ohne Duplikate
-- Eingabe des Codes über ein Tastenfeld (Keypad)
-- Rückmeldung in Form von "Strike", "Ball" oder "Out" auf dem LCD
-- Servo öffnet den Safe bei korrektem Code, schließt per Taste „D“
-- LED leuchtet nur bei ausreichender Helligkeit (Lichtsensor)
-- Erweiterbar mit eigenem Verschlüsselungsalgorithmus (z. B. Caesar)
+- Zahlenrätsel (Number Baseball)
+- Morsecode-Erkennung
+- Mathematische Quizfragen (optional)
 
-## 🛠 Aufbau
+## Verwendete Software
 
+- Arduino IDE
+- Autodesk Fusion 360 (für 3D-Modellierung)
 
+## Lizenz
 
-## 💡 Beispielcode
+- Der Arduino-Code steht unter der MIT-Lizenz (siehe LICENSE).
+- Die 3D-Modelle stehen unter der Creative Commons BY-NC 4.0 Lizenz (siehe LICENSE_3D).
 
-```cpp
-// Beispiel zur Caesar-Verschlüsselung
-String plainCode = "1234";
-String encryptedCode = "";
+## Open Source
 
-for (int i = 0; i < plainCode.length(); i++) {
-  char c = plainCode[i];
-  char shifted = ((c - '0' + 3) % 10) + '0';
-  encryptedCode += shifted;
-}
-// Ausgabe: 4567
-```
+Das Projekt ist frei zugänglich über unser GitHub-Repository. Wir freuen uns, wenn andere ihre eigenen Rätsel oder Erweiterungen hinzufügen!
 
-## 📦 Projektstruktur
-
-- `SafeProject.ino` – Hauptcode für Arduino
-- `README.md` – Diese Projektbeschreibung
-- `/images/` – (Hier kannst du Fotos oder Diagramme hinzufügen)
-- Optional: 3D-Dateien, z. B. `SafeCase.3mf`
-
-## 🚀 Anleitung
-
-1. Repository herunterladen oder klonen
-2. Datei `SafeProject.ino` in der Arduino IDE öffnen
-3. Board und Port auswählen, hochladen
-4. Serielle Konsole öffnen für Debug-Infos
-
-## 📚 Lizenz
-
-MIT License – frei zur privaten oder schulischen Nutzung.
+> Erstelle deinen eigenen geheimen Tresor und teile ihn mit der Welt!
