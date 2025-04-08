@@ -32,6 +32,7 @@ Dieses Projekt ist ein selbstgebauter Arduino-Safe, bei dem verschiedene Rätsel
 
 - Arduino IDE
 - Autodesk Fusion 360 (für 3D-Modellierung)
+- Bambustudio
 
 ## Lizenz
 
